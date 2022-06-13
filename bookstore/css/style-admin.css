@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding:0;
+}
+html {
+    height: auto;
+}
+body{
+    max-width: 100%;
+    height: 80%;
+    overflow-x: hidden;
+}
+main {
+  width: 80%;
+  margin: auto;
+}
+nav{
+    width: 60%;
+    margin: auto;
+}
+.navbar {
+
+  border-radius: 0;
+
+}
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+nav li {
+  float: left;
+  margin-left: 40px;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover:not(.active) {
+  background-color: #111;
+}
+.add-sec{
+    display: none;
+    width:500px;
+    height:750px;
+    margin: auto;
+    margin-top: 30px;
+    background-color: rgb(226, 232, 243);
+    padding: 7px;
+    border-radius: 5px;
+}
+ form{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+ input,select{
+    width: 85%;
+    height:40px;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+.btn-save{
+    background-color: #04AA6D;
+}
+.update-sec ,.delete-sec  {
+    display: none;
+    width:auto;
+    height:auto;
+    margin: auto;
+    margin-top: 30px;
+    background-color: rgb(226, 232, 243);
+    padding: 7px;
+    border-radius: 5px;
+}
+table, td, th {
+    border: 1px solid;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .show-users,.show-orders{
+    display: none;
+    width:auto;
+    height:auto;
+    margin: auto;
+    margin-top: 30px;
+    background-color: rgb(226, 232, 243);
+    padding: 7px;
+    border-radius: 5px;
+  }

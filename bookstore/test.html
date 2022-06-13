@@ -1,0 +1,50 @@
+<?php
+    session_start();
+    /*if($_SESSION['username']){
+        header('Location:index.php');
+    }*/
+    require('../php/connection.php');
+    $username = $email = $userimage = $phone = $passwd = $conpasswd = '';
+    $nameErr = $emailErr = $phoneErr = $passwdErr = $conpasswdErr =   '';
+    if($_SERVER['REQUEST_METHOD']== 'POST'){
+        if (!empty($_POST['username'])) {
+            $username = trim($_POST['username']);
+            if (!preg_match("^[a-zA-Z]+$^", $username)) {
+                $nameErr = "Invalid name";
+            }
+        }
+        else
+        $nameErr = "Name is required";
+     /*  if (!empty($_POST['phone'])) {
+            $email = trim($_POST['phone']);
+            if (!preg_match("[0-9]{10}", $phone)  ) {
+                $phoneErr = "Invalid phone number";
+            }
+        } else 
+            $phoneErr = 'phone number is required';
+        */
+    if (!empty($_POST['email'])) {
+        $email = trim($_POST['email']);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email";
+        }
+    } else
+        $emailErr = 'Email is required';
+
+    if (!empty($_POST['passwd'])) {
+        $passwd = trim($_POST['passwd']);
+        if (!preg_match("^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$^", $passwd)) {
+            $passwdErr = "Invalid Password Should Contain a-zA-Z0-9@$! and just 8 char";
+             
+        }
+    } else
+        $passwdErr = 'Password is required';
+        if (!empty($_POST['conpasswd'])) {
+            $conpasswd = trim($_POST['conpasswd']);
+            if ($_POST['conpasswd']!=$_POST['passwd']) {
+                $conpasswdErr = " Password Dosen't Match";
+            }
+        } else
+            $conpasswdErr = 'Confirm Password is required';
+    }
+?>
